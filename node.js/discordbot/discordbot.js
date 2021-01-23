@@ -2,6 +2,10 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = '!';
 
+client.on('ready', () => {
+  console.log(`${client.user.id}`);
+})
+
 client.on("message", async message => {
   if (message.content.startsWith(prefix)) {
     const args = message.content.slice(prefix.length).split(" ");
